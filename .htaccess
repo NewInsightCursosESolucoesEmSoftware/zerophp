@@ -1,0 +1,8 @@
+RewriteEngine On 
+#sobrescrever a URL
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php [QSA,L] 
+#Qualquer requisição da página será redirecionado para o index.php
+RewriteRule ^(.*)$ index.php?urlrewrited=$1 [QSA]
+#Agora o sistema deixa vc ter acesso a todo parâmetro que for passado
+# via URL colocando numa variável chamada urlrewrited
