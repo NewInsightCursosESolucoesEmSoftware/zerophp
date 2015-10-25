@@ -28,6 +28,9 @@ class Run {
     }
 
     function start() {
+        
+        Filter::doFilter($this->controller);
+        
         $class_controller = 'app\\controller\\'.ucfirst(strtolower($this->controller)) . 'Controller';
         $method_action = strtolower($this->action);
 

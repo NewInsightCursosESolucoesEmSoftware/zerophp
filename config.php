@@ -24,4 +24,6 @@ define('TEMPLATE', 'default');
 define('CONTROLLER_DEFAULT', 'Index');
 define('ACTION_DEFAULT', 'Index');
 
+define ('APPKEY', '#QWE@1WQEWELKASOO');
+
 ?>
