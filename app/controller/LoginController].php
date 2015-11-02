@@ -4,16 +4,18 @@ namespace app\controller;
 
 class LoginController extends app\lib\AppController{
     
-    public function doLogin($usuario){
-        echo 'Acesso ao doLogin';
+    public function doLogin(){
+        
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
         
         $sql = 'SELECT * FROM Usuario WHERE login = ? AND senha = ?; ';
-        $values = array($usuario->login,$usuario->senha);
+        $values = array($login,$senha);
         
         
-        $usuario_ = \app\model\Usuario::find_by_sql($sql,$values);
+        $usuario = \app\model\Usuario::find_by_sql($sql,$values);
         
-        echo 'Usuario:' . $usuario_->nome;
+        echo 'Usuario:' . $usuario->nome;
         
         Session::set('usuario',$usuario);
         $url = 'ator/lista';
